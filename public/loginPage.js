@@ -7,7 +7,9 @@ const userForm = new UserForm();
         if (response.success === true) {
             location.reload();
         }
-        else {alert("произошла ошибка")}; 
+        else {
+            userForm.setLoginErrorMessage(response.error);
+        }; 
     });
 };
 
@@ -17,6 +19,8 @@ const userForm = new UserForm();
         if (response.success === true) {
             location.reload();
         }
-        else {alert("произошла ошибка")}; 
+        else {
+            userForm.registerErrorMessage(response.error);
+        }; 
     });
 }
